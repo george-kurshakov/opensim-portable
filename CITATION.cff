@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "OpenSim Portable"
+abstract: "A portable Docker-based environment for OpenSim Python scripting and automation, designed for biomechanics researchers."
+version: 0.1.0
+date-released: 2026-06-23
+license: Apache-2.0
+url: "https://github.com/george-kurshakov/opensim-portable"
+authors:
+  - family-names: Kurshakov
+    given-names: Georgii
+    orcid: "https://orcid.org/0000-0002-8951-3528"

@@ -1,0 +1,6 @@
+services:
+  opensim:
+    image: giorgiorobotics/opensim:4.5.2-portable
+    volumes:
+      - ./data:/data
+      - ./scripts:/scripts

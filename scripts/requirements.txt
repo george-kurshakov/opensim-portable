@@ -1,0 +1,8 @@
+# This is a requirements file for the OpenSim portable environment.
+# Put the Python packages you need to install in this file, one per line.
+# At the container startup, the main script will run pip to install the packages listed here.
+
+# numpy
+# scipy
+# pandas
+# matplotlib

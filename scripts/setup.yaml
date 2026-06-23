@@ -1,0 +1,4 @@
+# This is a setup file for the OpenSim portable environment.
+
+script: tutorial_3.py           # The script to run when the container starts. It should be located in the scripts/ directory.
+requirements: requirements.txt  # The requirements file to install Python packages. It should be located in the scripts/ directory.
