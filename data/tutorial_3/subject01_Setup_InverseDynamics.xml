@@ -2,11 +2,11 @@
 <OpenSimDocument Version="20302">
 	<InverseDynamicsTool name="subject01_walk1">
 		<!--Directory used for writing results.-->
-		<results_directory> . </results_directory>
+		<results_directory> /data/tutorial_3/ </results_directory>
 		<!--Directory for input files-->
 		<input_directory>  </input_directory>
 		<!--Name of the .osim file used to construct a model.-->
-		<model_file> /data/subject01_simbody.osim </model_file>
+		<model_file> /data/tutorial_3/subject01_simbody.osim </model_file>
 		<!--Time range over which the inverse dynamics problem is solved.-->
 		<time_range>       0.40000000       1.60000000 </time_range>
 		<!--List of forces by individual or grouping name (e.g. All, actuators,
@@ -14,10 +14,10 @@
 		<forces_to_exclude> Muscles </forces_to_exclude>
 		<!--XML file (.xml) containing the external loads applied to the model as
 		    a set of ExternalForce(s).-->
-		<external_loads_file> subject01_walk1_grf.xml </external_loads_file>
+		<external_loads_file> /data/tutorial_3/subject01_walk1_grf.xml </external_loads_file>
 		<!--The name of the file containing coordinate data. Can be a motion
 		    (.mot) or a states (.sto) file.-->
-		<coordinates_file> subject01_walk1_ik.mot </coordinates_file>
+		<coordinates_file> /data/tutorial_3/subject01_walk1_ik.mot </coordinates_file>
 		<!--Low-pass cut-off frequency for filtering the coordinates_file data
 		    (currently does not apply to states_file or speeds_file). A negative
 		    value results in no filtering. The default value is -1.0, so no

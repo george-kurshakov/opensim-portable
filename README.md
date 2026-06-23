@@ -39,10 +39,14 @@ flowchart LR
 
 ## How is this repo structured?
 * data - an example data volume
+    * tutorial_3 - example data for tutorial 3 (scaling, inverse kinematics, inverse dynamics)
+    * tutorial_4 - example data for tutorial 4 (IMU-based inverse kinematics)
+    * Geometry - geometry files shared across tutorials
 * scripts - an example scripts volume
     * requirements.txt - a requirements file for pip, used to install needed Python libraries.
     * setup.yaml - a file to set up the active script and requirements file.
     * tutorial_3.py - an example script following the [official OpenSim tutorial 3](https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53089741/Tutorial+3+-+Scaling+Inverse+Kinematics+and+Inverse+Dynamics#IV.-Inverse-Kinematics)
+    * tutorial_4.py - an example script following the [official OpenSim tutorial 4](https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53084203/OpenSense+-+Kinematics+with+IMU+Data)
 
 * compose.yaml - setting up the image to be used and the volumes to be mounted
 
@@ -57,4 +61,4 @@ flowchart LR
 * The processing results can be easily visualized with OpenSim GUI.
 * In theory, the user's scripting capability is unlimited as long as it doesn't need any additional software modules (except for Python libraries that can be installed by listing them in *requirements.txt*).
 * An important feature of this implementation is a possibility for automated processing of large amounts of data. For that, one could mount the whole dataset folder as *data* and iterate through it using the active script.
-* Pay attention to the paths and file names. The environment inside the container is Linux (Ubuntu 22.04). *data* and *scripts* volumes land at the root, at */data* and */scripts* respectively. Relative paths in scripts and setup files can lead to ambiguity or unpredictable behaviour, so it is recommended to specify all paths as absolute (e.g. ```/data/gait2354_simbody.osim``` instead of ```data/gait2354_simbody.osim``` or ```gait2354_simbody.osim```).
+* Pay attention to the paths and file names. The environment inside the container is Linux (Ubuntu 22.04). *data* and *scripts* volumes land at the root, at */data* and */scripts* respectively. Relative paths in scripts and setup files can lead to ambiguity or unpredictable behaviour, so it is recommended to specify all paths as absolute (e.g. ```/data/tutorial_3/gait2354_simbody.osim``` instead of ```gait2354_simbody.osim```). Note that some OpenSim API fields expect bare file names and resolve them relative to a working directory, while others require full paths. There is no consistent rule — check the container logs for file access errors and adjust accordingly.

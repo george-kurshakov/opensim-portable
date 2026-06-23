@@ -47,6 +47,6 @@
 		<!--Storage file (.sto) containing (3) components of force and/or torque
 		    and point of application.Note: this file overrides the data source
 		    specified by the individual external forces if specified.-->
-		<datafile> subject01_walk1_grf.mot </datafile>
+		<datafile> /data/tutorial_3/subject01_walk1_grf.mot </datafile>
 </ExternalLoads>
 </OpenSimDocument>
