@@ -16,6 +16,27 @@ The Docker Compose (*compose.yaml*) file defines how the container should be run
 
 When running, the container executes the script in the *scripts* volume, indicated by the user, writing the logs to the *data* volume. The logs allow the user to debug the code without going inside the container.
 
+```mermaid
+flowchart LR
+    subgraph Host["Host Computer"]
+        data["data/\n(input & output files)"]
+        scripts["scripts/\n(script, setup.yaml,\nrequirements.txt)"]
+        compose["compose.yaml"]
+    end
+
+    subgraph Container["Docker Container (Ubuntu 22.04)"]
+        opensim["OpenSim 4.5.2\n+ Python API"]
+        mounted_data["/data"]
+        mounted_scripts["/scripts"]
+    end
+
+    compose -- "defines & runs" --> Container
+    data <-- "mount" --> mounted_data
+    scripts <-- "mount" --> mounted_scripts
+    mounted_scripts -- "executes script" --> opensim
+    opensim -- "writes logs & results" --> mounted_data
+```
+
 ## How is this repo structured?
 * data - an example data volume
 * scripts - an example scripts volume
